@@ -31,4 +31,9 @@ async def meow(ctx, arg=1):
     for _ in range(0, arg):
         await ctx.send("MEOW")
 
+@bot.command()
+async def image(ctx):
+  await ctx.send(ctx.message.attachments[0].url)
+  await ctx.send("TESTING")
+  
 bot.run(TOKEN)
