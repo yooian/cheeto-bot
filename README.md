@@ -9,3 +9,5 @@ UC Davis Discord bot to share and generate pictures of Cheeto!
 [Discord developer](https://discord.com/developers/applications)
 
 [AI image generation](https://stablediffusion.gigantic.work/) ...maybe
+
+[discord.py commands](https://discordpy.readthedocs.io/en/latest/ext/commands/commands.html)
