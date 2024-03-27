@@ -15,7 +15,6 @@ description = "A bot to send and get images of cheeto!"
 intents = discord.Intents.default()
 intents.message_content = True
 
-client = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix='$', description=description, intents=intents)
 
 # Bot commands
