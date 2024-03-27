@@ -32,8 +32,8 @@ async def meow(ctx, arg=1):
         await ctx.send("MEOW")
 
 @bot.command()
-async def image(ctx):
+async def cheeto(ctx):
   await ctx.send(ctx.message.attachments[0].url)
-  await ctx.send("TESTING")
+  await ctx.send("PICTURE RECEIVED")
   
 bot.run(TOKEN)
