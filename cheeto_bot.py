@@ -12,21 +12,18 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 intents = discord.Intents.default()
 intents.message_content = True
 
-bot = discord.Client(intents=intents)
+client = discord.Client(intents=intents)
+bot = commands.Bot(command_prefix='$', intents=intents)
 
 # Bot commands
-@bot.event
+@client.event
 async def on_ready():
-    print(f'We have logged in as {bot.user}')
+    print(f'We have logged in as {client.user}')
 
-@bot.event
-async def on_message(message):
-    if message.author == bot.user:
-        return
+@bot.command()
+async def copy(ctx, arg):
+    await ctx.send(arg)
 
-    if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
-
-bot.run(TOKEN)
+client.run(TOKEN)
 
 #... continue work
