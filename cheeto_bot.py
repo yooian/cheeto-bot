@@ -13,19 +13,23 @@ description = "A bot to send and get images of cheeto!"
 
 # Necessary for bot to receive messages
 intents = discord.Intents.default()
-intents.members = True
 intents.message_content = True
 
 client = discord.Client(intents=intents)
 bot = commands.Bot(command_prefix='$', description=description, intents=intents)
 
 # Bot commands
-@client.event
+@bot.event
 async def on_ready():
-    print(f'We have logged in as {client.user}')
+    print(f'We have logged in as {bot.user}')
 
 @bot.command()
 async def copy(ctx, arg):
     await ctx.send(arg)
 
-client.run(TOKEN)
+@bot.command()
+async def meow(ctx, arg=1):
+    for _ in range(0, arg):
+        await ctx.send("MEOW")
+
+bot.run(TOKEN)
