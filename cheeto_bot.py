@@ -28,6 +28,8 @@ async def copy(ctx, arg):
 
 @bot.command()
 async def meow(ctx, arg=1):
+    if not isinstance(arg, int):
+        return
     meow = ""
     for _ in range(0, arg):
         meow += "MEOW "
