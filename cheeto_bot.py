@@ -29,7 +29,9 @@ async def copy(ctx, arg):
 
 @bot.command()
 async def meow(ctx, arg=1):
+    meow = ""
     for _ in range(0, arg):
-        await ctx.send("MEOW")
+        meow += "MEOW "
+    await ctx.send(meow)
 
 bot.run(TOKEN)
