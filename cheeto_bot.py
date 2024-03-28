@@ -38,4 +38,9 @@ async def meow_error(ctx, error):
     if isinstance(error, commands.BadArgument):
         await ctx.send('I can only meow if you give me a number mf')
 
+@bot.command()
+async def cheeto(ctx):
+  await ctx.send(ctx.message.attachments[0].url)
+  await ctx.send("PICTURE RECEIVED")
+  
 bot.run(TOKEN)
