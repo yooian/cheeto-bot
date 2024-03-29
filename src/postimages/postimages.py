@@ -6,8 +6,9 @@ import string
 import magic
 import os
 import json
-from src.postimages.headers import PostImagesHeader
-from src.postimages.routes import PostImageRoute
+from PIL import Image
+from postimages.headers import PostImagesHeader
+from postimages.routes import PostImageRoute
 
 
 
@@ -75,7 +76,7 @@ class PostImages:
 
     def set_gallery_upload_token(self, working_gallery: dict) -> None:
         gallery_upload_token_response = requests.get(f"{PostImageRoute.gallery_token}/{working_gallery.get('hex')}", cookies=self.cookies, headers=PostImagesHeader.galleries)
-        self.upload_token = gallery_upload_token_response.text.split('"token","')[1].split('");')[0]
+        self.upload_token = gallery_upload_token_response.text.split('"token","')[0].split('");')[0]
 
     def set_working_gallery(self, gallery_name: str) -> None:
         self.working_gallery = self.get_gallery_by_name(gallery_name)
@@ -118,10 +119,11 @@ class PostImages:
         return links
 
 
-    def upload_image(self, image_path: str, optimize:bool = False) -> dict:
-        img_data = open(image_path, 'rb',).read().decode("latin1")
-        file_content_type = magic.from_file(image_path, mime=True)
-        file_name = os.path.basename(image_path)
+    def upload_image(self, image_url: str, optimize:bool = False) -> dict:
+        img = Image.open(requests.get(image_url, stream=True).raw)
+        img_data = img.mode
+        file_content_type = img.filename
+        file_name = img.format
         data = self._form_post_data([
             {
                 'Content-Disposition': 'form-data',
@@ -166,6 +168,7 @@ class PostImages:
         if res_json['status'] == 'OK':
             return self._get_image_urls(res_json['url'])
         else:
+            print(res_json)
             return False
 
 
