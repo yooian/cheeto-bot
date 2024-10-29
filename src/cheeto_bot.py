@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 import random
 import psycopg2 # PostgreSQL
 
-# Get token for bot
+# Get token and database parameters for bot
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
 DB_NAME = os.getenv('DB_NAME')
@@ -24,7 +24,7 @@ connection = psycopg2.connect(
 )
 
 # Description
-description = "A bot to send and get images of cheeto!"
+description = "A bot to get images of Cheeto!"
 
 # Necessary for bot to receive messages
 intents = discord.Intents.default()
@@ -53,7 +53,6 @@ async def on_ready():
 #         await ctx.send('I can only meow if you give me a number mf')
 
 @bot.command()
->>>>>>> main:src/cheeto_bot.py
 async def cheeto(ctx):
   with connection.cursor() as cursor:
     cursor.execute("SELECT url FROM cheetos ORDER BY RANDOM() LIMIT 1;")
