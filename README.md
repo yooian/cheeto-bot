@@ -1,10 +1,17 @@
-# cheeto-bot
+# Cheeto Bot
 
-UC Davis Discord bot to share and generate pictures of Cheeto!
+Discord bot to share and generate pictures of Cheeto!
+
+Disclaimer: Not officially offiliated with UC Davis or any related organizations!
+
+## Basic Functionalities
+
+`cheeto`: Get a random picture of Cheeto from a database of user-uploaded Cheeto pictures!
+`daily`: Get a daily picture of Cheeto!
+`upload`: Upload your own picture of Cheeto for others to see and use!
+
 
 ### Resources
-
-[Free Oracle database](https://www.oracle.com/database/technologies/appdev/xe.html)
 
 [Discord developer](https://discord.com/developers/applications)
 
