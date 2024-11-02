@@ -6,9 +6,11 @@ Disclaimer: Not officially offiliated with UC Davis or any related organizations
 
 ## Basic Functionalities
 
-`cheeto`: Get a random picture of Cheeto from a database of user-uploaded Cheeto pictures!
-`daily`: Get a daily picture of Cheeto!
-`upload`: Upload your own picture of Cheeto for others to see and use!
+`!cheeto`: Get a random picture of Cheeto from a database of user-uploaded Cheeto pictures!
+
+`!daily`: Get a daily picture of Cheeto!
+
+`!upload`: Upload your own picture of Cheeto for others to see and use!
 
 
 ### Resources
