@@ -37,21 +37,6 @@ bot = commands.Bot(command_prefix='!', description=description, intents=intents)
 async def on_ready():
     print(f'We have logged in as {bot.user}')
 
-# async def copy(ctx, arg):
-#     await ctx.send(arg)
-
-# @bot.command()
-# async def meow(ctx, arg=1):
-#     meow = ""
-#     for _ in range(0, arg):
-#         meow += "MEOW "
-#     await ctx.send(meow)
-    
-# @meow.error
-# async def meow_error(ctx, error):
-#     if isinstance(error, commands.BadArgument):
-#         await ctx.send('I can only meow if you give me a number mf')
-
 @bot.command()
 async def cheeto(ctx):
   with connection.cursor() as cursor:
