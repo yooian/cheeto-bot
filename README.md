@@ -13,10 +13,22 @@ Disclaimer: Not officially offiliated with UC Davis or any related organizations
 `!upload`: Upload your own picture of Cheeto for others to see and use!
 
 
-### Resources
+## Resources
 
 [Discord developer](https://discord.com/developers/applications)
 
 [AI image generation](https://stablediffusion.gigantic.work/) ...maybe
 
 [discord.py commands](https://discordpy.readthedocs.io/en/latest/ext/commands/commands.html)
+
+## Credits:
+
+### Authors:
+
+[Ian Yoo](https://github.com/yooian)
+[Cristian Embleton](https://github.com/C3viche)
+
+### Product Testing:
+
+Dorian Chiu
+[Sky Zhao](https://github.com/skyz04)
